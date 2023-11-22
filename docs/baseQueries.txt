@@ -1,0 +1,729 @@
+CREATE TABLE `country` (
+	`country_name`	varchar(50)	NOT NULL,
+	`continent_name`	varchar(10)	NOT NULL
+);
+
+CREATE TABLE `continent` (
+	`continent_name`	varchar(10)	NOT NULL
+);
+
+CREATE TABLE `gender_July` (
+	`country_name`	varchar(50)	NOT NULL,
+	`male`	bigint	NULL,
+	`female`	bigint	NULL
+);
+
+CREATE TABLE `total_passenger` (
+	`country_name`	varchar(50)	NOT NULL,
+	`July`	bigint	NOT NULL,
+	`August`	bigint	NOT NULL,
+	`September`	bigint	NOT NULL,
+	`July_attendant`	bigint	NULL,
+	`August_attendant`	bigint	NULL,
+	`September_attendant`	bigint	NULL
+);
+
+CREATE TABLE `growth_July` (
+	`country_name`	varchar(50)	NOT NULL,
+	`male`	bigint	NULL,
+	`female`	bigint	NULL,
+	`under_twenty`	bigint	NULL,
+	`under_thirty`	bigint	NULL,
+	`under_fourty`	bigint	NULL,
+	`under_fifty`	bigint	NULL,
+	`under_sixty`	bigint	NULL,
+	`over_sixty`	bigint	NULL
+);
+
+CREATE TABLE `age_July` (
+	`country_name`	varchar(50)	NOT NULL,
+	`under_twenty`	bigint	NULL,
+	`under_thirty`	bigint	NULL,
+	`under_fourty`	bigint	NULL,
+	`under_fifty`	bigint	NULL,
+	`under_sixty`	bigint	NULL,
+	`over_sixty`	bigint	NULL
+);
+
+CREATE TABLE `gender_August` (
+	`country_name`	varchar(50)	NOT NULL,
+	`male`	bigint	NULL,
+	`female`	bigint	NULL
+);
+
+CREATE TABLE `gender_September` (
+	`country_name`	varchar(50)	NOT NULL,
+	`male`	bigint	NULL,
+	`female`	bigint	NULL
+);
+
+CREATE TABLE `age_August` (
+	`country_name`	varchar(50)	NOT NULL,
+	`under_twenty`	bigint	NULL,
+	`under_thirty`	bigint	NULL,
+	`under_fourty`	bigint	NULL,
+	`under_fifty`	bigint	NULL,
+	`under_sixty`	bigint	NULL,
+	`over_sixty`	bigint	NULL
+);
+
+CREATE TABLE `age_september` (
+	`country_name`	varchar(50)	NOT NULL,
+	`under_twenty`	bigint	NULL,
+	`under_thirty`	bigint	NULL,
+	`under_fourty`	bigint	NULL,
+	`under_fifty`	bigint	NULL,
+	`under_sixty`	bigint	NULL,
+	`over_sixty`	bigint	NULL
+);
+
+CREATE TABLE `growth_august` (
+	`country_name`	varchar(50)	NOT NULL,
+	`male`	bigint	NULL,
+	`female`	bigint	NULL,
+	`under_twenty`	bigint	NULL,
+	`under_thirty`	bigint	NULL,
+	`under_fourty`	bigint	NULL,
+	`under_fifty`	bigint	NULL,
+	`under_sixty`	bigint	NULL,
+	`over_sixty`	bigint	NULL
+);
+
+CREATE TABLE `growth_september` (
+	`country_name`	varchar(50)	NOT NULL,
+	`male`	bigint	NULL,
+	`female`	bigint	NULL,
+	`under_twenty`	bigint	NULL,
+	`under_thirty`	bigint	NULL,
+	`under_fourty`	bigint	NULL,
+	`under_fifty`	bigint	NULL,
+	`under_sixty`	bigint	NULL,
+	`over_sixty`	bigint	NULL
+);
+
+ALTER TABLE `country` ADD CONSTRAINT `PK_COUNTRY` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `continent` ADD CONSTRAINT `PK_CONTINENT` PRIMARY KEY (
+	`continent_name`
+);
+
+ALTER TABLE `gender_July` ADD CONSTRAINT `PK_GENDER_JULY` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `total_passenger` ADD CONSTRAINT `PK_TOTAL_PASSENGER` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `growth_July` ADD CONSTRAINT `PK_GROWTH_JULY` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `age_July` ADD CONSTRAINT `PK_AGE_JULY` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `gender_August` ADD CONSTRAINT `PK_GENDER_AUGUST` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `gender_September` ADD CONSTRAINT `PK_GENDER_SEPTEMBER` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `age_August` ADD CONSTRAINT `PK_AGE_AUGUST` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `age_september` ADD CONSTRAINT `PK_AGE_SEPTEMBER` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `growth_august` ADD CONSTRAINT `PK_GROWTH_AUGUST` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `growth_september` ADD CONSTRAINT `PK_GROWTH_SEPTEMBER` PRIMARY KEY (
+	`country_name`
+);
+
+ALTER TABLE `gender_July` ADD CONSTRAINT `FK_country_TO_gender_July_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `total_passenger` ADD CONSTRAINT `FK_country_TO_total_passenger_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `growth_July` ADD CONSTRAINT `FK_country_TO_growth_July_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `age_July` ADD CONSTRAINT `FK_country_TO_age_July_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `gender_August` ADD CONSTRAINT `FK_country_TO_gender_August_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `gender_September` ADD CONSTRAINT `FK_country_TO_gender_September_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `age_August` ADD CONSTRAINT `FK_country_TO_age_August_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `age_september` ADD CONSTRAINT `FK_country_TO_age_september_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `growth_august` ADD CONSTRAINT `FK_country_TO_growth_august_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+ALTER TABLE `growth_september` ADD CONSTRAINT `FK_country_TO_growth_september_1` FOREIGN KEY (
+	`country_name`
+)
+REFERENCES `country` (
+	`country_name`
+);
+
+
+
+INSERT INTO continent(continent_name) VALUES('Asia');
+INSERT INTO continent(continent_name) VALUES('America');
+INSERT INTO continent(continent_name) VALUES('Europe');
+INSERT INTO continent(continent_name) VALUES('Oceania');
+INSERT INTO continent(continent_name) VALUES('Africa');
+INSERT INTO continent(continent_name) VALUES('Etc.');
+
+INSERT INTO country(country_name, continent_name) VALUES('China', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Japan', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Taiwan', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Hong Kong', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Macau', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Philippines', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Indonesia', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Thailand', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Vietnam', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('India', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Malaysia', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Singapore', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Mongolia', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Uzbekistan', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Myanmar', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Gcc', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Kazakhstan', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Turkiye', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Cambodia', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Sri Lanka', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Bangladesh', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Pakistan', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Israel', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Iran', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('Asia etc.', 'Asia');
+INSERT INTO country(country_name, continent_name) VALUES('USA', 'America');
+INSERT INTO country(country_name, continent_name) VALUES('Canada', 'America');
+INSERT INTO country(country_name, continent_name) VALUES('Brazil', 'America');
+INSERT INTO country(country_name, continent_name) VALUES('Mexico', 'America');
+INSERT INTO country(country_name, continent_name) VALUES('America etc.', 'America');
+INSERT INTO country(country_name, continent_name) VALUES('Russia', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('UK', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Germany', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('France', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Italy', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Netherlands', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Ukraine', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Spain', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Romania', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Norway', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Sweden', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Poland', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Swiss', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Portugal', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Austria', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Finland', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Belgium', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Croatia', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Greece', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Bulgaria', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Denmark', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Ireland', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Europe etc.', 'Europe');
+INSERT INTO country(country_name, continent_name) VALUES('Australia', 'Oceania');
+INSERT INTO country(country_name, continent_name) VALUES('New Zealand', 'Oceania');
+INSERT INTO country(country_name, continent_name) VALUES('Oceania etc.', 'Oceania');
+INSERT INTO country(country_name, continent_name) VALUES('Republic of South Africa', 'Africa');
+INSERT INTO country(country_name, continent_name) VALUES('Africa etc.', 'Africa');
+INSERT INTO country(country_name, continent_name) VALUES('Unknown', 'Etc.');
+INSERT INTO country(country_name, continent_name) VALUES('Oversea Korean', 'Etc.');
+
+INSERT INTO gender_july(country_name, male, female) VALUES('China', '76691', '145480');
+INSERT INTO gender_july(country_name, male, female) VALUES('Japan', '67928', '142568');
+INSERT INTO gender_july(country_name, male, female) VALUES('Taiwan', '36116', '67149');
+INSERT INTO gender_july(country_name, male, female) VALUES('Hong Kong', '12964', '26319');
+INSERT INTO gender_july(country_name, male, female) VALUES('Macau', '1146', '2388');
+INSERT INTO gender_july(country_name, male, female) VALUES('Philippines', '7298', '6977');
+INSERT INTO gender_july(country_name, male, female) VALUES('Indonesia', '6900', '7060');
+INSERT INTO gender_july(country_name, male, female) VALUES('Thailand', '6173', '11858');
+INSERT INTO gender_july(country_name, male, female) VALUES('Vietnam', '15103', '18390');
+INSERT INTO gender_july(country_name, male, female) VALUES('India', '5081', '1632');
+INSERT INTO gender_july(country_name, male, female) VALUES('Malaysia', '4146', '5518');
+INSERT INTO gender_july(country_name, male, female) VALUES('Singapore', '5050', '6818');
+INSERT INTO gender_july(country_name, male, female) VALUES('Mongolia', '4459', '6622');
+INSERT INTO gender_july(country_name, male, female) VALUES('Uzbekistan', '2916', '1474');
+INSERT INTO gender_july(country_name, male, female) VALUES('Myanmar', '2564', '321');
+INSERT INTO gender_july(country_name, male, female) VALUES('Gcc', '2117', '1815');
+INSERT INTO gender_july(country_name, male, female) VALUES('Kazakhstan', '1858', '2711');
+INSERT INTO gender_july(country_name, male, female) VALUES('Turkiye', '1056', '881');
+INSERT INTO gender_july(country_name, male, female) VALUES('Cambodia', '1958', '1184');
+INSERT INTO gender_july(country_name, male, female) VALUES('Sri Lanka', '1025', '131');
+INSERT INTO gender_july(country_name, male, female) VALUES('Bangladesh', '1624', '421');
+INSERT INTO gender_july(country_name, male, female) VALUES('Pakistan', '739', '150');
+INSERT INTO gender_july(country_name, male, female) VALUES('Israel', '675', '470');
+INSERT INTO gender_july(country_name, male, female) VALUES('Iran', '152', '92');
+INSERT INTO gender_july(country_name, male, female) VALUES('Asia etc.', '5451', '1649');
+INSERT INTO gender_july(country_name, male, female) VALUES('USA', '48589', '47850');
+INSERT INTO gender_july(country_name, male, female) VALUES('Canada', '8274', '8789');
+INSERT INTO gender_july(country_name, male, female) VALUES('Brazil', '1283', '1353');
+INSERT INTO gender_july(country_name, male, female) VALUES('Mexico', '1156', '1508');
+INSERT INTO gender_july(country_name, male, female) VALUES('America etc.', '2239', '2397');
+INSERT INTO gender_july(country_name, male, female) VALUES('Russia', '5011', '6746');
+INSERT INTO gender_july(country_name, male, female) VALUES('UK', '7665', '6204');
+INSERT INTO gender_july(country_name, male, female) VALUES('Germany', '5986', '4527');
+INSERT INTO gender_july(country_name, male, female) VALUES('France', '5699', '5831');
+INSERT INTO gender_july(country_name, male, female) VALUES('Italy', '2078', '1322');
+INSERT INTO gender_july(country_name, male, female) VALUES('Netherlands', '3212', '2665');
+INSERT INTO gender_july(country_name, male, female) VALUES('Ukraine', '353', '247');
+INSERT INTO gender_july(country_name, male, female) VALUES('Spain', '1868', '1631');
+INSERT INTO gender_july(country_name, male, female) VALUES('Romania', '294', '339');
+INSERT INTO gender_july(country_name, male, female) VALUES('Norway', '980', '970');
+INSERT INTO gender_july(country_name, male, female) VALUES('Sweden', '1879', '1718');
+INSERT INTO gender_july(country_name, male, female) VALUES('Poland', '977', '1116');
+INSERT INTO gender_july(country_name, male, female) VALUES('Swiss', '1734', '1711');
+INSERT INTO gender_july(country_name, male, female) VALUES('Portugal', '558', '602');
+INSERT INTO gender_july(country_name, male, female) VALUES('Austria', '910', '772');
+INSERT INTO gender_july(country_name, male, female) VALUES('Finland', '584', '800');
+INSERT INTO gender_july(country_name, male, female) VALUES('Belgium', '1279', '1357');
+INSERT INTO gender_july(country_name, male, female) VALUES('Croatia', '126', '93');
+INSERT INTO gender_july(country_name, male, female) VALUES('Greece', '334', '168');
+INSERT INTO gender_july(country_name, male, female) VALUES('Bulgaria', '141', '145');
+INSERT INTO gender_july(country_name, male, female) VALUES('Denmark', '980', '971');
+INSERT INTO gender_july(country_name, male, female) VALUES('Ireland', '558', '446');
+INSERT INTO gender_july(country_name, male, female) VALUES('Europe etc.', '2265', '2331');
+INSERT INTO gender_july(country_name, male, female) VALUES('Australia', '7112', '6758');
+INSERT INTO gender_july(country_name, male, female) VALUES('New Zealand', '1537', '1395');
+INSERT INTO gender_july(country_name, male, female) VALUES('Oceania etc.', '95', '98');
+INSERT INTO gender_july(country_name, male, female) VALUES('Republic of South Africa', '518', '562');
+INSERT INTO gender_july(country_name, male, female) VALUES('Africa etc.', '2141', '1299');
+INSERT INTO gender_july(country_name, male, female) VALUES('Unknown', '11', '6');
+INSERT INTO gender_july(country_name, male, female) VALUES('Oversea Korean', '1232', '1677');
+
+INSERT INTO gender_august(country_name, male, female) VALUES('China', '99306', '157296');
+INSERT INTO gender_august(country_name, male, female) VALUES('Japan', '85116', '177395');
+INSERT INTO gender_august(country_name, male, female) VALUES('Taiwan', '33952', '64567');
+INSERT INTO gender_august(country_name, male, female) VALUES('Hong Kong', '14400', '28399');
+INSERT INTO gender_august(country_name, male, female) VALUES('Macau', '1531', '2879');
+INSERT INTO gender_august(country_name, male, female) VALUES('Philippines', '7888', '6310');
+INSERT INTO gender_august(country_name, male, female) VALUES('Indonesia', '7489', '6436');
+INSERT INTO gender_august(country_name, male, female) VALUES('Thailand', '5391', '9814');
+INSERT INTO gender_august(country_name, male, female) VALUES('Vietnam', '16638', '17408');
+INSERT INTO gender_august(country_name, male, female) VALUES('India', '4834', '1935');
+INSERT INTO gender_august(country_name, male, female) VALUES('Malaysia', '5685', '8118');
+INSERT INTO gender_august(country_name, male, female) VALUES('Singapore', '5595', '8031');
+INSERT INTO gender_august(country_name, male, female) VALUES('Mongolia', '5054', '6684');
+INSERT INTO gender_august(country_name, male, female) VALUES('Uzbekistan', '3891', '1789');
+INSERT INTO gender_august(country_name, male, female) VALUES('Myanmar', '2803', '555');
+INSERT INTO gender_august(country_name, male, female) VALUES('Gcc', '1353', '1157');
+INSERT INTO gender_august(country_name, male, female) VALUES('Kazakhstan', '1974', '3065');
+INSERT INTO gender_august(country_name, male, female) VALUES('Turkiye', '1035', '972');
+INSERT INTO gender_august(country_name, male, female) VALUES('Cambodia', '2007', '981');
+INSERT INTO gender_august(country_name, male, female) VALUES('Sri Lanka', '1280', '206');
+INSERT INTO gender_august(country_name, male, female) VALUES('Bangladesh', '1754', '284');
+INSERT INTO gender_august(country_name, male, female) VALUES('Pakistan', '949', '220');
+INSERT INTO gender_august(country_name, male, female) VALUES('Israel', '788', '667');
+INSERT INTO gender_august(country_name, male, female) VALUES('Iran', '164', '139');
+INSERT INTO gender_august(country_name, male, female) VALUES('Asia etc.', '5854', '2251');
+INSERT INTO gender_august(country_name, male, female) VALUES('USA', '37559', '37290');
+INSERT INTO gender_august(country_name, male, female) VALUES('Canada', '7303', '7917');
+INSERT INTO gender_august(country_name, male, female) VALUES('Brazil', '838', '769');
+INSERT INTO gender_august(country_name, male, female) VALUES('Mexico', '870', '1055');
+INSERT INTO gender_august(country_name, male, female) VALUES('America etc.', '1297', '1425');
+INSERT INTO gender_august(country_name, male, female) VALUES('Russia', '4767', '6473');
+INSERT INTO gender_august(country_name, male, female) VALUES('UK', '5319', '4768');
+INSERT INTO gender_august(country_name, male, female) VALUES('Germany', '6242', '5518');
+INSERT INTO gender_august(country_name, male, female) VALUES('France', '7663', '7899');
+INSERT INTO gender_august(country_name, male, female) VALUES('Italy', '3501', '3353');
+INSERT INTO gender_august(country_name, male, female) VALUES('Netherlands', '2268', '1943');
+INSERT INTO gender_august(country_name, male, female) VALUES('Ukraine', '359', '247');
+INSERT INTO gender_august(country_name, male, female) VALUES('Spain', '2541', '2726');
+INSERT INTO gender_august(country_name, male, female) VALUES('Romania', '327', '378');
+INSERT INTO gender_august(country_name, male, female) VALUES('Norway', '379', '332');
+INSERT INTO gender_august(country_name, male, female) VALUES('Sweden', '695', '602');
+INSERT INTO gender_august(country_name, male, female) VALUES('Poland', '1034', '1144');
+INSERT INTO gender_august(country_name, male, female) VALUES('Swiss', '867', '809');
+INSERT INTO gender_august(country_name, male, female) VALUES('Portugal', '405', '504');
+INSERT INTO gender_august(country_name, male, female) VALUES('Austria', '653', '600');
+INSERT INTO gender_august(country_name, male, female) VALUES('Finland', '363', '313');
+INSERT INTO gender_august(country_name, male, female) VALUES('Belgium', '657', '661');
+INSERT INTO gender_august(country_name, male, female) VALUES('Croatia', '118', '69');
+INSERT INTO gender_august(country_name, male, female) VALUES('Greece', '364', '218');
+INSERT INTO gender_august(country_name, male, female) VALUES('Bulgaria', '133', '131');
+INSERT INTO gender_august(country_name, male, female) VALUES('Denmark', '525', '470');
+INSERT INTO gender_august(country_name, male, female) VALUES('Ireland', '413', '339');
+INSERT INTO gender_august(country_name, male, female) VALUES('Europe etc.', '1666', '2054');
+INSERT INTO gender_august(country_name, male, female) VALUES('Australia', '5975', '5725');
+INSERT INTO gender_august(country_name, male, female) VALUES('New Zealand', '1270', '1147');
+INSERT INTO gender_august(country_name, male, female) VALUES('Oceania etc.', '113', '87');
+INSERT INTO gender_august(country_name, male, female) VALUES('Republic of South Africa', '457', '779');
+INSERT INTO gender_august(country_name, male, female) VALUES('Africa etc.', '2020', '1344');
+INSERT INTO gender_august(country_name, male, female) VALUES('Unknown', '2', '7');
+INSERT INTO gender_august(country_name, male, female) VALUES('Oversea Korean', '1311', '1755');
+
+INSERT INTO gender_september(country_name, male, female) VALUES('China', '98352', '160096');
+INSERT INTO gender_september(country_name, male, female) VALUES('Japan', '77528', '171674');
+INSERT INTO gender_september(country_name, male, female) VALUES('Taiwan', '30310', '61845');
+INSERT INTO gender_september(country_name, male, female) VALUES('Hong Kong', '9293', '20909');
+INSERT INTO gender_september(country_name, male, female) VALUES('Macau', '666', '1564');
+INSERT INTO gender_september(country_name, male, female) VALUES('Philippines', '7490', '8336');
+INSERT INTO gender_september(country_name, male, female) VALUES('Indonesia', '5829', '6661');
+INSERT INTO gender_september(country_name, male, female) VALUES('Thailand', '7288', '14424');
+INSERT INTO gender_september(country_name, male, female) VALUES('Vietnam', '13898', '17778');
+INSERT INTO gender_september(country_name, male, female) VALUES('India', '4827', '1942');
+INSERT INTO gender_september(country_name, male, female) VALUES('Malaysia', '7530', '12652');
+INSERT INTO gender_september(country_name, male, female) VALUES('Singapore', '10107', '15334');
+INSERT INTO gender_september(country_name, male, female) VALUES('Mongolia', '4993', '6806');
+INSERT INTO gender_september(country_name, male, female) VALUES('Uzbekistan', '4143', '1565');
+INSERT INTO gender_september(country_name, male, female) VALUES('Myanmar', '2317', '797');
+INSERT INTO gender_september(country_name, male, female) VALUES('Gcc', '1414', '883');
+INSERT INTO gender_september(country_name, male, female) VALUES('Kazakhstan', '1859', '2436');
+INSERT INTO gender_september(country_name, male, female) VALUES('Turkiye', '1279', '889');
+INSERT INTO gender_september(country_name, male, female) VALUES('Cambodia', '1898', '886');
+INSERT INTO gender_september(country_name, male, female) VALUES('Sri Lanka', '1468', '247');
+INSERT INTO gender_september(country_name, male, female) VALUES('Bangladesh', '1273', '223');
+INSERT INTO gender_september(country_name, male, female) VALUES('Pakistan', '780', '182');
+INSERT INTO gender_september(country_name, male, female) VALUES('Israel', '944', '935');
+INSERT INTO gender_september(country_name, male, female) VALUES('Iran', '269', '180');
+INSERT INTO gender_september(country_name, male, female) VALUES('Asia etc.', '3830', '1662');
+INSERT INTO gender_september(country_name, male, female) VALUES('USA', '43925', '44840');
+INSERT INTO gender_september(country_name, male, female) VALUES('Canada', '8630', '9060');
+INSERT INTO gender_september(country_name, male, female) VALUES('Brazil', '850', '771');
+INSERT INTO gender_september(country_name, male, female) VALUES('Mexico', '933', '1029');
+INSERT INTO gender_september(country_name, male, female) VALUES('America etc.', '1592', '1655');
+INSERT INTO gender_september(country_name, male, female) VALUES('Russia', '5304', '5823');
+INSERT INTO gender_september(country_name, male, female) VALUES('UK', '5911', '4211');
+INSERT INTO gender_september(country_name, male, female) VALUES('Germany', '7301', '6179');
+INSERT INTO gender_september(country_name, male, female) VALUES('France', '5581', '5467');
+INSERT INTO gender_september(country_name, male, female) VALUES('Italy', '2150', '1629');
+INSERT INTO gender_september(country_name, male, female) VALUES('Netherlands', '2100', '1554');
+INSERT INTO gender_september(country_name, male, female) VALUES('Ukraine', '304', '252');
+INSERT INTO gender_september(country_name, male, female) VALUES('Spain', '1753', '1605');
+INSERT INTO gender_september(country_name, male, female) VALUES('Romania', '516', '494');
+INSERT INTO gender_september(country_name, male, female) VALUES('Norway', '429', '336');
+INSERT INTO gender_september(country_name, male, female) VALUES('Sweden', '914', '654');
+INSERT INTO gender_september(country_name, male, female) VALUES('Poland', '1232', '1501');
+INSERT INTO gender_september(country_name, male, female) VALUES('Swiss', '1103', '938');
+INSERT INTO gender_september(country_name, male, female) VALUES('Portugal', '410', '439');
+INSERT INTO gender_september(country_name, male, female) VALUES('Austria', '661', '559');
+INSERT INTO gender_september(country_name, male, female) VALUES('Finland', '395', '345');
+INSERT INTO gender_september(country_name, male, female) VALUES('Belgium', '873', '827');
+INSERT INTO gender_september(country_name, male, female) VALUES('Croatia', '169', '89');
+INSERT INTO gender_september(country_name, male, female) VALUES('Greece', '279', '147');
+INSERT INTO gender_september(country_name, male, female) VALUES('Bulgaria', '190', '244');
+INSERT INTO gender_september(country_name, male, female) VALUES('Denmark', '706', '513');
+INSERT INTO gender_september(country_name, male, female) VALUES('Ireland', '480', '358');
+INSERT INTO gender_september(country_name, male, female) VALUES('Europe etc.', '1659', '1528');
+INSERT INTO gender_september(country_name, male, female) VALUES('Australia', '10378', '10613');
+INSERT INTO gender_september(country_name, male, female) VALUES('New Zealand', '2033', '1882');
+INSERT INTO gender_september(country_name, male, female) VALUES('Oceania etc.', '108', '72');
+INSERT INTO gender_september(country_name, male, female) VALUES('Republic of South Africa', '362', '423');
+INSERT INTO gender_september(country_name, male, female) VALUES('Africa etc.', '1950', '942');
+INSERT INTO gender_september(country_name, male, female) VALUES('Unknown', '5', '5');
+INSERT INTO gender_september(country_name, male, female) VALUES('Oversea Korean', '1571', '2091');
+
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('China','947.7', '2210.7', '5347.9','1922.4','1389.2','1104.4','741.3', '1054.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Japan','1063.9', '2360.6', '2623.6','2020','1489.1','1205.4','1394.4', '2264.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Taiwan','5234.7', '7319.8', '30331.1','3958.1','3325.4','6702.9','5721.6', '12315.9');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Hong Kong','2670.1', '3418.6', '6311','2034.8','1993','3380.9','3550.4', '5245');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Macau','12633.3', '34014.3', '46400','42750','16820','12800','7233.3', '0');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Philippines','-4.8', '153.5', '188.2','24','7.2','26.9','66.8', '173.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Indonesia','30.1', '303.7', '556.6','13.4','58.8','152.5','129.2', '280.5');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Thailand','10.3', '17.1', '39.1','-8.4','-0.8','36.1','64.9', '141.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Vietnam','89.5', '123', '249.6','30.3','103.5','210.7','177.9', '313');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('India','21.4', '104.3', '145.3','24.9','15.3','36.4','41.4', '150');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Malaysia','184.9', '230.6', '344.5','193.3','162.9','187','207.6', '418.2');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Singapore','70.9', '65.3', '54.2','53.3','47.3','75.5','84', '211.4');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Mongolia','73.8', '99.2', '132.8','62.1','91.1','86.9','57.4', '53.6');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Uzbekistan','21', '5.6', '6.7','13.3','23.5','18.2','12.1', '6.4');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Myanmar','-18.2', '55.1', '242.2','2.5','-26.3','-49.7','-39.9', '32');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Gcc','127.6', '126', '172.1','93','89.3','167.1','125.4', '212.8');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Kazakhstan','-11.5', '38.5', '31.6','-20.4','-0.6','24.5','49.7', '55.9');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Turkiye','117.3', '199.7', '260.3','107','128.2','142.8','202.9', '382.4');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Cambodia','48.6', '80.2', '779.7','37','13.3','57','15', '153.1');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Sri Lanka','-10.5', '191.1', '918.8','-24.3','-12.2','3.4','28.6', '-14.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Bangladesh','58.4', '262.9', '736.5','25.2','36.2','140','233.3', '177.8');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Pakistan','18.4', '37.6', '62.3','19.7','21','26.9','-15.2', '26.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Israel','105.8', '221.9', '509.3','94.4','119.1','91.4','98.9', '136.5');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Iran','29.9', '39.4', '40','56.5','25.7','17.8','38.9', '75');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Asia etc.','38.2', '101.6', '300','23.9','39','78.3','92.6', '137');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('USA','106.9', '109.3', '117.1','100','94.9','111.3','107.2', '111.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Canada','118', '135.3', '164.2','99.4','108.4','127.4','117.2', '134.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Brazil','306', '310', '1000','157.7','114.7','295.2','338', '419');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Mexico','377.7', '366.9', '568.3','266.7','208.4','501.6','376.4', '404.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('America etc.','328.9', '416.6', '1803.1','273','176.5','195.6','196.7', '262.9');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Russia','143.1', '244', '186.3','232','188.7','178.8','173.9', '152.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('UK','201.4', '263.9', '481.1','163.5','133.4','140.3','168.5', '240.5');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Germany','105.4', '155.6', '288.5','106.9','83.7','86.6','64.7', '100.8');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('France','117.9', '132.2', '127.1','117.3','116.8','129.1','124.9', '198.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Italy','116.9', '202.5', '302.2','115.1','148.8','124.3','118.8', '123.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Netherlands','184.8', '236.5', '446.2','174.7','156.3','125.5','118.1', '93.4');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Ukraine','-27.4', '94.5', '71.4','-5.1','-0.6','-14.3','-39', '-18.2');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Spain','153.8', '222.3', '445','122.9','153.7','164.2','173.3', '189.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Romania','36.7', '216.8', '887.5','100','37.5','68.1','-7.4', '127.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Norway','326.1', '491.5', '1561.2','217.1','118','379.6','334.1', '211.8');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Sweden','449.4', '680.9', '2060.5','301.8','185.2','322','286.3', '183.9');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Poland','179.1', '350', '968.1','178.3','104.9','158.7','347.1', '80.6');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Swiss','229', '302.6', '827.9','145.1','116.5','125.5','114.1', '139.5');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Portugal','274.5', '576.4', '3692.9','215.7','168.6','143.9','151.3', '385.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Austria','174.1', '185.9', '481.9','134.9','94','132','94', '97');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Finland','367.2', '742.1', '4094.4','232.1','179.5','191.1','196.8', '366.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Belgium','229.6', '287.7', '860.1','110','77.8','129.2','154.2', '102.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Croatia','13.5', '244.4', '580','64.9','4.3','91.3','53.8', '-14.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Greece','-7.2', '115.4', '290.3','-25.3','-25','16.1','16.4', '7.9');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Bulgaria','72', '302.8', '461.5','79.4','160','127.3','40', '275');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Denmark','197.9', '302.9', '607.2','148.8','139.7','204.7','195.1', '184.6');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Ireland','164.5', '232.8', '532.1','128.8','102.4','202.1','144.7', '42.9');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Europe etc.','189.6', '320.8', '1018.6','163.4','95.3','128.3','167.6', '182.1');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Australia','196.5', '255.1', '429.9','206.2','150.4','163.2','195.2', '294.1');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('New Zealand','168.2', '193.7', '268.6','226.7','154.4','152.9','127.9', '177.5');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Oceania etc.','137.5', '366.7', '150','354.5','100','291.7','266.7', '333.3');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Republic of South Africa','150.2', '159', '1376.9','117.8','128.8','128.6','140.4', '31.7');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Africa etc.','107.1', '193.9', '670','93.1','89.7','109.5','71.6', '128.8');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Unknown','-60.7', '500', '0','100','66.7','-66.7','-85.7', '-100');
+INSERT INTO growth_july(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Oversea Korean','22.8', '21.4', '-100','249','15.8','6.6','16.9', '37.6');
+
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('China','755.7', '973.1', '765.1','574.2','1381','1414.7','1075.6', '1494.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Japan','701.2', '1027.6', '1236.8','709.7','695.2','923.5','934.3', '1370.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Taiwan','2177.1', '2250.5', '7161.3','1110.8','1410.4','2823.5','2852.3', '4772.5');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Hong Kong','1954.2', '2056.3', '4585.8','1016.2','1299.4','2717.1','2409.7', '7686.4');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Macau','12658.3', '11416', '122900','4285.7','15900','11383.3','15050', '30600');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Philippines','10.1', '150.8', '193.4','31','28.9','41.9','62.3', '216');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Indonesia','30.4', '159.8', '245.2','22.9','54.4','106.8','160.1', '209.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Thailand','56.2', '50.8', '132.3','32.9','37.7','66.3','73.9', '125.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Vietnam','46.6', '72.6', '107.8','12.5','57.8','114.9','141.9', '202.3');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('India','9.2', '76.9', '103.6','2.1','7.5','33.2','52.4', '108.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Malaysia','219', '253.4', '394.8','167.3','209.3','247.8','274.4', '433.1');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Singapore','83.7', '114.7', '143.8','67.9','86.8','110.5','113.5', '247.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Mongolia','30.1', '37.5', '46.8','16.9','31.2','42.1','38.7', '59.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Uzbekistan','-2.6', '13.9', '3.2','-19.4','14.8','44.3','40.2', '13.6');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Myanmar','-9.1', '48.8', '71','11.2','-17.1','-32.1','-29', '11.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Gcc','33.4', '42.1', '68.2','13.4','29.1','42.3','26.1', '119.6');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Kazakhstan','35.4', '59.2', '68.9','35.8','50','36.4','46.6', '52.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Turkiye','75.7', '127.6', '232.1','85.2','117.1','55.3','82.9', '59.3');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Cambodia','38.2', '34.6', '316.9','25.7','21','77.9','50', '151.6');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Sri Lanka','24.4', '104', '269.2','9.4','54.8','32.6','28.6', '70');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Bangladesh','10', '47.2', '178.9','-5.2','17','12.8','13.3', '177.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Pakistan','17.3', '14.6', '28.1','12.7','21.8','15.8','4.8', '5.6');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Israel','161.8', '274.7', '965.5','150.7','134.5','151','176.7', '182.1');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Iran','-7.9', '16.8', '-3.4','45.8','-8.9','-12.7','-11.8', '9.1');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Asia etc.','35', '69.5', '259.8','21.3','24.2','52.2','67', '164.7');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('USA','272.1', '567.8', '101.6','64.2','69.3','81.7','69.9', '74.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Canada','75.6', '76.5', '271.1','73.7','102.9','162.7','124.8', '111.7');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Brazil','118.7', '143.4', '303.4','55.6','94.3','133.6','69.2', '272.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Mexico','123.5', '96.2', '208.3','48.1','145.9','260.6','189.8', '331.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('America etc.','150', '103.7', '277','74.7','102.2','81.8','133.3', '75.9');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Russia','83.8', '86.1', '164.4','174.3','122.3','114.2','96.8', '101.4');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('UK','106.4', '167.5', '175','74.7','57.5','62.5','79.7', '111.6');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Germany','64.3', '111.1', '99.1','45.9','65.9','67.9','51.9', '70.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('France','54.3', '69.2', '103.5','73.2','90.9','131.7','122.5', '141.3');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Italy','87.8', '102', '762.4','111.2','235.9','199.7','196.1', '209.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Netherlands','202.3', '238.7', '231.2','56.9','81.1','147.4','121.5', '163.5');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Ukraine','100.4', '116.9', '10.7','9.5','-15.1','-25.6','-24.7', '-17.9');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Spain','-25.2', '31.4', '217.2','84.8','175.2','192.9','276.6', '232.6');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Romania','151.3', '169.4', '442.1','68.2','32.8','82.5','15.9', '272.7');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Norway','28.2', '157.1', '113.3','11.2','39.8','114.3','63.3', '65.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Sweden','36.8', '41.9', '98.2','42.3','63.6','97.6','56.8', '102.7');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Poland','56.5', '64.9', '322.5','117.5','123.9','177.6','220.3', '141.7');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Swiss','142.7', '175.7', '165.8','51.6','105.8','75.5','71.2', '27.7');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Portugal','62.7', '81.4', '678.1','123.5','161.7','151','292.9', '236.4');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Austria','177.4', '265.2', '112.8','60','71.7','29.4','59', '38.1');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Finland','55.8', '70.9', '83.9','67.2','147.2','64','102.8', '68.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Belgium','101.7', '65.6', '78.8','45.3','63.8','52.6','75.3', '100');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Croatia','51', '69.5', '500','6.4','-4.7','-27.5','15.4', '0');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Greece','-16.3', '72.5', '218.8','17.1','-13.5','32.6','51.9', '50');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Bulgaria','9.6', '98.2', '281.8','21.1','48.3','36.4','20.8', '160');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Denmark','27.9', '77', '81.3','46.8','43.4','17.9','9.8', '26.3');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Ireland','27.1', '52.6', '26.2','83.4','40.7','27.6','40.7', '80');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Europe etc.','41.4', '66.2', '170.6','76.6','111.2','71.3','101.6', '109.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Australia','131.1', '171.6', '170.8','146.4','128.5','105.7','125.5', '309.1');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('New Zealand','121.6', '141', '158.3','131.4','145.4','143','100', '112.8');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Oceania etc.','126', '234.6', '400','209.1','221.4','129.4','143.8', '8.3');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Republic of South Africa','43.3', '62.3', '119.4','63.9','37.8','45.2','60', '28.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Africa etc.','39.9', '68.2', '309.7','26.4','19.6','55','19.1', '36.2');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Unknown','-90.5', '-50', '-83.3','-71.4','-100','-80','-72.7', '0');
+INSERT INTO growth_august(country_name, male, female,under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Oversea Korean','23.9', '39.2', '-100','59.7','31','12.1','28.2', '46.4');
+
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('China','675.6', '1128.2', '675.9','768','1128.3','857.5','866.8', '1413.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Japan','570.4', '982.4', '943.9','814.3','644.1','639.1','826.5', '1281.7');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Taiwan','1584.8', '2325.3', '4757.2','1540.6','1579.5','1832.9','2960.5', '5579.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Hong Kong','685.5', '936.1', '759.1','538.3','812.2','851.1','1511.9', '2418.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Macau','4340', '6156', '2566.7','4250','4920','8533.3','8933.3', '0');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Philippines','-2.7', '132.5', '96.4','22.1','29.4','28.7','71.6', '192.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Indonesia','12', '165', '111.9','4.5','76.3','108.9','132.6', '250.2');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Thailand','82.9', '76.5', '124.5','38.5','59.4','111','154.9', '263.6');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Vietnam','39.2', '98.5', '58','40','62.7','86.2','110.7', '194.3');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('India','5.2', '91', '60.7','-0.4','10','27.9','46.1', '204.6');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Malaysia','245.9', '278.9', '192.4','255.8','236.1','240.3','351.3', '503.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Singapore','73.3', '87', '107.8','35.1','66.3','100.3','115', '168.8');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Mongolia','26.3', '37.3', '28.4','20','37.9','31.7','34.3', '84.4');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Uzbekistan','8.8', '15.5', '13.5','4.2','13.1','10.7','22', '18');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Myanmar','-12.4', '100.8', '98','20','-18.6','-28.5','21.2', '30');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Gcc','48.2', '47.2', '21.1','31.3','64.3','66.5','65', '33.3');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Kazakhstan','40.3', '66.7', '77.6','70.1','49','44','41.4', '29.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Turkiye','133.8', '186.8', '165.2','206.3','119.3','122.2','142.2', '213.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Cambodia','-3.4', '-8.3', '73.3','-15.6','-22.5','67.9','75.7', '100');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Sri Lanka','3.1', '99.2', '132','14.1','9.9','-14.9','-3.4', '43.8');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Bangladesh','9.3', '100.9', '200','20.6','4.1','-5','12.7', '20');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Pakistan','-2.7', '42.2', '113.6','-13.3','12.1','6.7','-13.7', '10');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Israel','36.8', '93.6', '109.6','23.4','12.2','58.3','108.3', '198.4');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Iran','65', '55.2', '180','2.3','51.8','38.8','110.3', '216.7');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Asia etc.','-16.9', '37.1', '134','-30.1','-16.4','30.7','48', '63.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('USA','68', '68.3', '91.9','78.5','79.6','69','55.6', '58.6');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Canada','76.1', '79.9', '148.4','75.7','87.6','78.4','69.7', '63');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Brazil','119.6', '92.3', '156.3','64.1','80.2','141.1','169.6', '188.3');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Mexico','101.1', '131.8', '164.1','141.1','84.1','83.1','114.6', '321.4');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('America etc.','73.6', '122.1', '117.4','77.1','105.4','88','68', '178.4');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Russia','96.8', '144', '104.7','171.8','140.1','92.3','55.8', '73.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('UK','91.9', '117.5', '97.6','90.3','95.3','100.7','92.7', '167.1');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Germany','66.3', '89.7', '109.5','77','77.2','80.4','65.5', '60.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('France','64.8', '87.4', '95.7','78.9','76.3','51.5','60.3', '108.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Italy','83', '131.4', '143.5','105.9','85.5','90.8','89.2', '204');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Netherlands','74.9', '112.6', '141.4','86.6','106.3','34.6','93.5', '137.6');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Ukraine','-29.3', '45.7', '-17.5','-2.4','1.7','-1.1','-28.6', '-36.8');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Spain','103.4', '104.7', '225','64.8','115.5','99.7','123.5', '152.6');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Romania','89', '201.2', '488.9','117.2','121.6','134.5','70', '279.2');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Norway','58.9', '44.2', '34.3','58.5','90.7','55.7','11.2', '47.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Sweden','104.5', '118', '36.4','100.5','130.7','88.7','98.5', '200');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Poland','102.3', '157.9', '196.1','136.1','85.6','114.8','201.1', '203.4');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Swiss','73.2', '91', '82.7','91.6','89.2','52.4','78.2', '72.6');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Portugal','129.1', '167.7', '250','110.3','169.9','63.2','234.4', '327.3');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Austria','68.2', '82.1', '18.6','100.8','58.2','81.9','53.1', '81.1');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Finland','101.5', '136.3', '52.4','136.5','178.8','65.3','93', '133.3');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Belgium','80.4', '94.6', '122.2','74','107.5','86.3','92.8', '78.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Croatia','38.5', '169.7', '150','87.5','108.1','48.7','25.8', '16.7');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Greece','7.7', '40', '8.3','2.3','6','26.5','41.5', '56.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Bulgaria','79.2', '205', '133.3','71.2','182.9','55.3','144', '405.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Denmark','75.2', '92.1', '40.8','89.1','110.9','72.3','61.5', '124.5');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Ireland','66.1', '126.6', '77.8','76.2','75.7','85.7','136.5', '107.9');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Europe etc.','65.6', '94.4', '119.8','68.8','69.3','79.9','72', '244.7');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Australia','150.3', '174', '179.6','136.4','127.2','149.1','158.8', '263.4');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('New Zealand','101.9', '132.1', '161.6','98.5','115.1','122.2','88.1', '126.3');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Oceania etc.','96.4', '125', '25','236.4','82.1','78.6','154.5', '80');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Republic of South Africa','66.1', '82.3', '288.9','44.6','103.8','87.9','56.9', '84.1');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Africa etc.','37.2', '57.3', '12.4','28.1','45.1','55.8','51', '87.1');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Unknown','-54.5', '400', '0','0','-100','0','-50', '-75');
+INSERT INTO growth_september(country_name, male, female, under_twenty, under_thirty, under_fourty, under_fifty, under_sixty, over_sixty) VALUES('Oversea Korean','12.9', '11.3', '-100','36.6','11.9','7.9','2', '17.1');
+
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('China','224805', '259659', '263940','2634','3057','5492');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Japan','211468', '263453', '250102','972','942','900');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Taiwan','103566', '98854', '92411','301','335','256');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Hong Kong','39527', '43031', '30424','244','232','222');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Macau','3534', '4410', '2232','0','0','2');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Philippines','26215', '24059', '27175','11940','9861','11349');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Indonesia','17934', '18538', '16843','3974','4613','4353');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Thailand','20184', '17379', '23684','2153','2174','1972');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Vietnam','38402', '39540', '36665','4909','5494','4989');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('India','11052', '11083', '11002','4339','4314','4233');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Malaysia','11356', '15522', '21867','1692','1719','1685');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Singapore','13348', '15070', '26929','1480','1444','1488');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Mongolia','11114', '11767', '11809','33','29','10');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Uzbekistan','4655', '5935', '5967','265','255','259');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Myanmar','4991', '5523', '5266','2106','2165','2152');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Gcc','4127', '2768', '2522','195','258','225');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Kazakhstan','4886', '5332', '4617','317','293','322');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Turkiye','3012', '2943', '3199','1075','936','1031');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Cambodia','3145', '2989', '2785','3','1','1');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Sri Lanka','1597', '1952', '2202','441','466','487');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Bangladesh','2140', '2208', '1577','95','170','81');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Pakistan','957', '1243', '1037','68','74','75');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Israel','1151', '1471', '1881','6','16','2');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Iran','269', '316', '468','25','13','19');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Asia etc.','7591', '8721', '6016','491','616','524');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('USA','104823', '83250', '96925','8384','8401','8160');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Canada','18343', '16345', '18856','1280','1125','1166');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Brazil','2934', '1951', '1911','298','344','290');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Mexico','2859', '2127', '2142','195','202','180');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('America etc.','5478', '3378', '4050','842','656','803');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Russia','15617', '14198', '13815','3860','2958','2688');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('UK','14236', '10344', '10477','367','257','355');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Germany','11610', '12875', '14491','1097','1115','1011');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('France','12443', '16487', '12053','913','925','1005');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Italy','3974', '7381', '4320','574','527','541');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Netherlands','6852', '5192', '4586','975','981','932');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Ukraine','1307', '1534', '1350','707','928','794');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Spain','3610', '5404', '3500','111','137','142');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Romania','902', '936', '1353','269','231','343');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Norway','1970', '728', '777','20','17','12');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Sweden','3628', '1321', '1593','31','24','25');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Poland','2710', '2772', '3440','617','594','707');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Swiss','3481', '1723', '2084','36','47','43');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Portugal','1274', '1000', '934','114','91','85');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Austria','1749', '1324', '1296','67','71','76');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Finland','1683', '983', '1022','299','307','282');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Belgium','2750', '1422', '1820','114','104','120');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Croatia','332', '285', '402','113','98','144');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Greece','632', '815', '524','130','233','98');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Bulgaria','362', '355', '528','76','91','94');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Denmark','2003', '1050', '1299','52','55','80');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Ireland','1038', '787', '885','34','35','47');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Europe etc.','5247', '4338', '3760','651','618','573');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Australia','14442', '12298', '21637','572','598','646');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('New Zealand','3190', '2647', '4144','258','230','229');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Oceania etc.','228', '298', '234','35','98','54');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Republic of South Africa','1405', '1520', '1063','325','284','278');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Africa etc.','5118', '5222', '4464','1678','1858','1572');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Unknown','23', '11', '17','6','2','7');
+INSERT INTO total_passenger(country_name, july, august, september, july_attendant, august_attendant, september_attendant) VALUES('Oversea Korean','2909', '3066', '3662','0','0','0');
+
+CREATE TABLE `review` (
+	`id`	INT	AUTO_INCREMENT	PRIMARY KEY,
+	`nickname`	varchar(20)	NOT NULL,
+	`country_name`	varchar(50)	NOT NULL,
+	`comment`	varchar(500)	NULL,
+    constraint review_country_fk foreign key (country_name) references country (country_name)
+);
+
+INSERT INTO review(id, nickname, country_name, comment) VALUES(1, 'travelerch','China', 'they spend a lot of money');
+INSERT INTO review(id, nickname, country_name, comment) VALUES(2, 'aaab','Japan', 'loved K-pop');
+INSERT INTO review(id, nickname, country_name, comment) VALUES(3, 'q123','USA', 'Soem people loves bulgogi');

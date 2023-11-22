@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+h1 {
+    text-align: center;
+    font-family: 'Pretendard', 'Times New Roman', Times; 
+}
+
+body {
+    font-family: 'Pretendard', 'Times New Roman', Times; 
+    cursor: url('plane.png'), auto;
+    color : #ffffff;
+    background-color: #97d0fc;
+}
+
+#world-map-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#world-map {
+    width: 100%;
+    height: auto;
+}
+
+.continent-label {
+    width: 125px; /* 원하는 너비 설정 */
+    height: 80px; /* 원하는 높이 설정 */
+    position: absolute;
+    font-family: 'Pretendard', 'Times New Roman', Times; 
+    font-size: 25px;
+    font-weight: 300;
+    color: black; 
+    background-color: transparent; /* 배경색 설정 */
+    padding: 10px; /* 여백 추가 */
+    cursor: pointer; /* 커서를 손가락 모양으로 변경 */
+    background-image: url('cloud.png'); /* 이미지 경로를 입력하세요 */
+    background-position: center;
+    background-size: cover;
+    border: none;
+}
+.continent-label:hover {
+    background-color: transparent;
+}
+
+.result-display {
+    position: absolute;
+    font-size: 25px;
+    font-weight : 500;
+    margin-left: 10px;
+}
+
+.ranking-button {
+    display: inline-block;
+    padding: 10px 20px 10px 35px; /* 이미지가 있는 경우 왼쪽 여백 조정 */
+    text-decoration: none;
+    color: white;
+    background-color: #3498db; /* 배경색 설정 */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* 배경색 변화 애니메이션 */
+    position: relative; /* 상대 위치 지정 */
+}
+
+.ranking-button img {
+    position: absolute;
+    left: 10px; /* 이미지 왼쪽 위치 조정 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* 이미지 크기 조정 */
+    height: auto;
+}
+
+.ranking-button span {
+    vertical-align: middle; /* 텍스트를 수직 가운데로 정렬 */
+}
+
+.ranking-button:hover {
+    background-color: #186191; /* 호버 시 배경색 변화 */
+}
+
+table {
+    width: 70%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: rgb(129, 205, 134);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2d9230;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Style for the button on hover */
+button:hover {
+    background-color: #2980b9;
+}
